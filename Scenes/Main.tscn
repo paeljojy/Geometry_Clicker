@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Backgrounds/Background01_dark.png" type="Texture" id=1]
+[ext_resource path="res://Source/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Shapes/Square.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Shapes/Circle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Shapes/Triangle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Shapes/Pentagon.tscn" type="PackedScene" id=7]
+
+[node name="Main" type="Node"]
+script = ExtResource( 2 )
+Circle = ExtResource( 5 )
+Square = ExtResource( 4 )
+Triangle = ExtResource( 6 )
+Pentagon = ExtResource( 7 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]
+
+[node name="BackgroundTexture" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Shapes" type="Node" parent="."]
+
+[node name="ShapeSpawnTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="StartGameTimerDelegate" type="Timer" parent="."]
+one_shot = true
+__meta__ = {
+"_editor_description_": "Used to initialize game and give player some time to get ready to play."
+}
+
+[connection signal="start_game" from="HUD" to="." method="_on_HUD_start_game"]
+[connection signal="resized" from="BackgroundTexture" to="." method="_on_BackgroundTexture_resized"]
+[connection signal="timeout" from="ShapeSpawnTimer" to="." method="_on_ShapeSpawnTimer_timeout"]
+[connection signal="timeout" from="StartGameTimerDelegate" to="." method="_on_StartGameTimerDelegate_timeout"]

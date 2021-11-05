@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Source/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Shapes/ScoreBackground.png" type="Texture" id=3]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -312.923
+margin_top = -106.769
+margin_right = 174.077
+margin_bottom = 25.2307
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreShadowLabel" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -265.802
+margin_top = -118.333
+margin_right = -71.8021
+margin_bottom = -18.3329
+rect_pivot_offset = Vector2( 74.733, 50 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "432433"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreLabel" type="Label" parent="ScoreShadowLabel"]
+margin_left = -1.8067
+margin_top = -2.22137
+margin_right = 0.0652924
+margin_bottom = -0.0393524
+rect_pivot_offset = Vector2( 74.733, 50 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.94902, 0.109804, 0.419608, 1 )
+text = "432433"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -14.0
+custom_colors/font_color = Color( 0.12549, 0.909804, 0.501961, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+value = 40.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabelShadow" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -209.5
+margin_top = -50.0
+margin_right = 209.5
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "GAME OVER"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverLabel" type="Label" parent="GameOverLabelShadow"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -211.621
+margin_top = -52.8284
+margin_right = 207.379
+margin_bottom = 47.1716
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.643137, 0.12549, 0.0705882, 1 )
+text = "GAME OVER"
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="EndGameTimer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="EndGameTimer" to="." method="_on_EndGameTimer_timeout"]

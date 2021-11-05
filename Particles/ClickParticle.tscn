@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/particle_examples/floaty_128.png" type="Texture" id=1]
+[ext_resource path="res://Particles/ClickParticle.gd" type="Script" id=2]
+[ext_resource path="res://Particles/Click_ParticleMaterial.tres" type="Material" id=3]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[node name="Particles2D" type="Particles2D"]
+material = SubResource( 1 )
+amount = 500
+lifetime = 0.3
+explosiveness = 1.0
+randomness = 0.68
+process_material = ExtResource( 3 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
