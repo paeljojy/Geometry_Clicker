@@ -4,6 +4,7 @@ signal start_game
 
 var totalScore : int = 0
 var progress : int = 40
+var maxProgress : int = 100
 var gameInProgress : bool = false
 
 func increase_score(increase : int):
@@ -64,6 +65,8 @@ func increase_progress(delta : int):
 	if (!gameInProgress):
 		return
 	progress += delta
+	if (progress > maxProgress):
+		progress = maxProgress
 	updateProgress()
 
 #func _process(delta):
