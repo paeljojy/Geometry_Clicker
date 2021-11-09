@@ -4,3 +4,6 @@
 *.import
 *~
 .mono
+mono
+Export/Windows/data_Geometry Clicker
+Export/Anroid/Geometry_Clicker.apk.idsig

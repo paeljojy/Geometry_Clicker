@@ -22,9 +22,8 @@ _global_script_class_icons={
 
 config/name="Geometry Clicker"
 run/main_scene="res://Scenes/Main.tscn"
-config/icon="res://IconGeometry.ico"
-config/macos_native_icon="res://IconGeometry.ico"
-config/windows_native_icon="res://IconGeometry.ico"
+config/icon="res://Icon.png"
+config/windows_native_icon="res://icon.ico"
 
 [display]
 

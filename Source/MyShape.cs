@@ -65,6 +65,10 @@ public class MyShape : Node2D
 			// else
 				// GD.Print("Random event!");
 		}
+		// else if (@event is InputEventGesture)
+		// {
+			// if(@event.)
+		// }
 	}
 
 	private void _on_Area2D_mouse_exited()
