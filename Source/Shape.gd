@@ -6,6 +6,7 @@ export(int) var pointMultiplier = 1
 
 onready var disappearanceTimer = $DisappearanceTimer
 onready var hud = get_parent().get_parent().get_child(0)
+onready var main = get_parent().get_parent()
 
 export(float) var disappearanceTimeout = 4.5
 
@@ -55,8 +56,13 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			newParticle.position = pos
 #	else:
 #		print("Random event!")
-	
 
 func _on_DisappearanceTimer_timeout():
 	hud.decrease_progress(10)
 	queue_free()
+
+func _on_Area2D_mouse_exited():
+	main.bMouseOverShape = false
+
+func _on_Area2D_mouse_entered():
+	main.bMouseOverShape = true

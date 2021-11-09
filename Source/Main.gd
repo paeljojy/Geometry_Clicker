@@ -12,6 +12,8 @@ export(PackedScene) var Pentagon
 var SCREENWIDTH : float = 1280.0
 var SCREENHEIGHT : float = 720.0
 
+var bMouseOverShape : bool = false
+
 func _ready():
 	# $StartGameTimerDelegate.start()
 	randomize()
@@ -86,8 +88,6 @@ func _on_StartGameTimerDelegate_timeout():
 func _on_HUD_start_game():
 	$StartGameTimerDelegate.start()
 
-
-
 func _on_BackgroundTexture_resized():
 	var rect = OS.get_window_safe_area()
 	print(String(rect.size.x))
@@ -96,3 +96,14 @@ func _on_BackgroundTexture_resized():
 	SCREENHEIGHT = rect.size.y
 	print("Main height: " + String(SCREENHEIGHT))
 	print("Main width: " + String(SCREENWIDTH))
+
+func _on_BackgroundTexture_gui_input(event):
+	print("missed")
+	
+
+func _on_MissArea_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.is_pressed() && !bMouseOverShape:
+			get_child(0).decrease_progress(10)
+			
+			
