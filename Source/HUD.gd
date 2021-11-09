@@ -69,15 +69,6 @@ func increase_progress(delta : int):
 		progress = maxProgress
 	updateProgress()
 
-#func _process(delta):
-#	pass
-
-func _on_MissTapCollision_gui_input(event):
-	if event is InputEventMouseButton:
-		if event.is_pressed():
-			decrease_progress(10)
-			print("miss!!")
-
 func _on_EndGameTimer_timeout():
 	# Get shapes and destroy them
 	var shapes = get_parent().get_child(2).get_children()

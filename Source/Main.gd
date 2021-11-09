@@ -99,11 +99,9 @@ func _on_BackgroundTexture_resized():
 
 func _on_BackgroundTexture_gui_input(event):
 	print("missed")
-	
 
 func _on_MissArea_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
 		if event.is_pressed() && !bMouseOverShape:
 			get_child(0).decrease_progress(10)
-			
-			
+

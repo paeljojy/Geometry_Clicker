@@ -39,7 +39,8 @@ size=false
 
 [mono]
 
-debugger_agent/port=23652
+debugger_agent/wait_for_debugger=true
+debugger_agent/wait_timeout=12000
 
 [physics]
 
