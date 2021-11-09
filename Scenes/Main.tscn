@@ -9,7 +9,7 @@
 [ext_resource path="res://Scenes/Shapes/Pentagon.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1026.75, 667.414 )
+extents = Vector2( 1913, 1060.05 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 2 )
@@ -44,16 +44,10 @@ __meta__ = {
 }
 
 [node name="MissArea" type="Area2D" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MissArea"]
-position = Vector2( 619.372, 354.463 )
+position = Vector2( 1905.48, 1033.37 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [connection signal="resized" from="BackgroundTexture" to="." method="_on_BackgroundTexture_resized"]
 [connection signal="timeout" from="StartGameTimerDelegate" to="." method="_on_StartGameTimerDelegate_timeout"]

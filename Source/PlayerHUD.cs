@@ -46,7 +46,9 @@ public class PlayerHUD : CanvasLayer
 			return;
 		progress += delta;
 		if (progress > maxProgress)
+		{
 			progress = maxProgress;
+		}
 
 		updateProgress();
 	}

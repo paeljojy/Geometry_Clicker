@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "MyShape",
 "language": "GDScript",
-"path": "res://Source/Shape.gd"
+"path": "res://Source/GDScripts/Shape.gd"
 } ]
 _global_script_class_icons={
 "MyShape": ""
@@ -28,8 +28,9 @@ config/windows_native_icon="res://IconGeometry.ico"
 
 [display]
 
-window/size/width=1280
-window/size/height=720
+window/size/width=1920
+window/size/height=1080
+window/size/fullscreen=true
 window/vsync/use_vsync=false
 window/stretch/aspect="keep"
 
